@@ -1,0 +1,32 @@
+version: "3.7"
+
+networks:
+  your-network:
+    external: true
+    name: your-network
+
+services:
+  gitea:
+    image: gitea/gitea:1.20
+    container_name: gitea
+    environment:
+      - APP_NAME="GITEA REPOSITORY"
+      - DB_TYPE=postgres
+      - DB_HOST=your-postgresql-server:5432
+      - DB_NAME=db_gitea
+      - DB_USER=gitea
+      - DB_PASSWD=yoursecurepassword
+      - FILE_MAX_SIZE=200
+      - ALLOWED_DOMAINS=
+      - BLOCKED_DOMAINS=
+      - ALLOW_LOCALNETWORKS=true
+      - TZ=Asia/Jakarta
+    restart: always
+    networks:
+      - your-network
+    volumes:
+      - ./data:/data
+    ports:
+      - 3000:3000
+      - 3443:443
+      - 3022:22
