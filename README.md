@@ -1,9 +1,9 @@
-# CREATE GITEA CONTAINER USING DOCKER-COMPOSE
+# CREATING GITEA CONTAINER USING DOCKER-COMPOSE
 
 Gitea, a lightweight git repository
 
 ## HOW TO USE
-Simply use docker-compose command to create this docker container stack.
+Simply use docker-compose command to create this docker container with minimal config.
 
 ```
 docker-compose -f docker-compose.yml up -d
